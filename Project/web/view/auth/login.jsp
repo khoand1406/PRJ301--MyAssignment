@@ -8,9 +8,16 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="css/login.css" rel="stylesheet" type="text/css"/>
         <title>Login Form</title>
+       
         <style>
             body {
-                background-image: url('images/My-flove.jpg');
+                background-image: url('images/my_self.jpg');
+                background-repeat: no-repeat;
+                max-width: 100%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                
             }
         </style>
     </head>
@@ -33,5 +40,9 @@
                 <button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
             
             </form>
-               
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script>
+            
+            </script>
         </body>

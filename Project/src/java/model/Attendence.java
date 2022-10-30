@@ -16,6 +16,16 @@ public class Attendence {
     private boolean status;
     private java.util.Date recordtime;
     private ArrayList<Student> students;
+    private SessionGroup sessions;
+
+    public SessionGroup getSessions() {
+        return sessions;
+    }
+
+    public void setSessions(SessionGroup sessions) {
+        this.sessions = sessions;
+    }
+    
 
     public Attendence() {
     }

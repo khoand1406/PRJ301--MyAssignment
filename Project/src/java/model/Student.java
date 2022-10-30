@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author win
@@ -15,9 +17,19 @@ public class Student {
     private String image;
     private String address;
     private Attendence attend;
+    private ArrayList<Group> groups;
 
     public Student() {
     }
+
+    public ArrayList<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(ArrayList<Group> groups) {
+        this.groups = groups;
+    }
+    
 
     public Attendence getAttend() {
         return attend;

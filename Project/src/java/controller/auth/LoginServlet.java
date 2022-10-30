@@ -80,12 +80,13 @@ public class LoginServlet extends HttpServlet {
             request.getSession().setAttribute("account", account);
 //            response.getWriter().println("Login successful");
 ////            response.sendRedirect("view.jsp");
-            request.setAttribute("mess", "Login successful");
+//            request.setAttribute("mess", "Login successful");
             response.sendRedirect("view/home.jsp");
         }else{
+            
             request.setAttribute("mess", "Wrong username or password");
             
-            response.sendRedirect("login");
+           request.getRequestDispatcher("view/auth/login.jsp").forward(request, response);
             
         }
         
