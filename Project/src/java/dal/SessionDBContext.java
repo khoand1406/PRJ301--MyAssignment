@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Attendence;
 import model.Courses;
 import model.Group;
 import model.Instructor;
@@ -35,9 +36,23 @@ public class SessionDBContext extends DBContext<SessionGroup> {
             String sql_delete = "DELETE [Session]\n"
                     + "where [Session].ssid=?";
 
-            PreparedStatement stm_remove= connection.prepareStatement(sql_delete);
+            PreparedStatement stm_remove = connection.prepareStatement(sql_delete);
             stm_remove.setInt(1, model.getId());
             stm_remove.executeUpdate();
+
+            for (Attendence atts : model.getAttends()) {
+                String sql_insert = "Insert into Attend(ssid, stuid, present, [description]) "
+                        + "values(?, "
+                        + "?, "
+                        + "?, "
+                        + "?)";
+                PreparedStatement stm_insert = connection.prepareStatement(sql_insert);
+                stm_insert.setInt(1, model.getId());
+                stm_insert.setInt(2, atts.getStudent().getId());
+                stm_insert.setBoolean(3, atts.isStatus());
+                stm_insert.setString(4, atts.getDescription());
+                stm.executeUpdate();
+            }
         } catch (Exception ex) {
 
         }
