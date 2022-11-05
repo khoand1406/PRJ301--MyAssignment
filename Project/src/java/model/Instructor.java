@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author win
  */
-public class Lecturer {
+public class Instructor {
     int inid;
     String inname;
     private ArrayList<SessionGroup> sessions;
@@ -19,7 +19,7 @@ public class Lecturer {
     String inimage;
     String inemail;
 
-    public Lecturer() {
+    public Instructor() {
     }
 
     public int getInid() {

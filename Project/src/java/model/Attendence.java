@@ -15,8 +15,9 @@ public class Attendence {
     private int aid;
     private boolean status;
     private java.util.Date recordtime;
-    private ArrayList<Student> students;
+    private Student student;
     private SessionGroup sessions;
+    private String description;
 
     public SessionGroup getSessions() {
         return sessions;
@@ -30,13 +31,23 @@ public class Attendence {
     public Attendence() {
     }
 
-    public ArrayList<Student> getStudents() {
-        return students;
+    public Student getStudent() {
+        return student;
     }
 
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
+    public void setStudent(Student student) {
+        this.student = student;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+   
     
     public int getAid() {
         return aid;

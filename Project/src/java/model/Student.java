@@ -16,7 +16,7 @@ public class Student {
     private Boolean gender;
     private String image;
     private String address;
-    private Attendence attend;
+    private ArrayList<Attendence> atts;
     private ArrayList<Group> groups;
 
     public Student() {
@@ -29,15 +29,17 @@ public class Student {
     public void setGroups(ArrayList<Group> groups) {
         this.groups = groups;
     }
+
+    public ArrayList<Attendence> getAtts() {
+        return atts;
+    }
+
+    public void setAtts(ArrayList<Attendence> atts) {
+        this.atts = atts;
+    }
     
-
-    public Attendence getAttend() {
-        return attend;
-    }
-
-    public void setAttend(Attendence attend) {
-        this.attend = attend;
-    }
+    
+   
     
 
     public int getId() {

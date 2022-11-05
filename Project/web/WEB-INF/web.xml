@@ -16,6 +16,10 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>controller.home.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TakeAttController</servlet-name>
+        <servlet-class>controller.lecturer.TakeAttController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ListServlet</servlet-name>
         <url-pattern>/student/view</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TakeAttController</servlet-name>
+        <url-pattern>/lecture/takeatt</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

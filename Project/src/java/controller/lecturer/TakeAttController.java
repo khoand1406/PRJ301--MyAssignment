@@ -2,23 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package controller;
+package controller.lecturer;
 
-import dal.StudentDBContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import model.Student;
+
 
 /**
  *
  * @author win
  */
-public class ListServlet extends HttpServlet {
+public class TakeAttController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,8 +27,22 @@ public class ListServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try ( PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet TakeAttController</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet TakeAttController at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -44,7 +56,8 @@ public class ListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        int sesid= Integer.parseInt(request.getParameter("id"));
+        
     }
 
     /**
@@ -59,15 +72,8 @@ public class ListServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-       
     }
-    
-     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        StudentDBContext db = new StudentDBContext();
-        ArrayList<Student> list = db.list();
-        req.setAttribute("students", list);
-        req.getRequestDispatcher("../view/student/view.jsp").forward(req, resp);
-    }
+
     /**
      * Returns a short description of the servlet.
      *

@@ -15,7 +15,7 @@ public class SessionGroup {
     int id;
     
     private Group group;
-    private Lecturer lecturer;
+    private Instructor instructor;
     private Room room;
     private TimeSlot slot;
 
@@ -43,13 +43,17 @@ public class SessionGroup {
         this.group = group;
     }
 
-    public Lecturer getLecturer() {
-        return lecturer;
+    public Instructor getInstructor() {
+        return instructor;
     }
 
-    public void setLecturer(Lecturer lecturer) {
-        this.lecturer = lecturer;
+    public void setInstructor(Instructor instructor) {
+        this.instructor = instructor;
     }
+
+
+
+ 
 
     public Room getRoom() {
         return room;
