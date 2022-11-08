@@ -7,6 +7,7 @@ package dal;
 import jakarta.websocket.Session;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Attendence;
 import model.Student;
@@ -24,7 +25,7 @@ public class AttendenceDBContext extends DBContext<Attendence> {
                     + "ISNULL(att.[description], '') [description] from Session ses inner join GroupS g on ses.gid= g.gid\n"
                     + "INNER JOIN Group_Student gs on g.gid=gs.gid\n"
                     + "inner join Student st on st.[sid]= gs.[sid]\n"
-                    + "	left join Attend att on att.ssid=ses.ssid\n"
+                    + "	left join Attend att on att.ssid=ses.ssid\n and st.[sid]=att.[stuid]"
                     + "	where ses.ssid=?";
             PreparedStatement stm= connection.prepareStatement(sql);
             stm.setInt(1, id);
@@ -45,7 +46,7 @@ public class AttendenceDBContext extends DBContext<Attendence> {
                 
             }
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
 
         }
         return atts;

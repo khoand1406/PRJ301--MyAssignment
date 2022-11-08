@@ -13,9 +13,18 @@ import java.util.ArrayList;
 public class TimeSlot {
     int tid;
     String tname;
+    String description;
     private ArrayList<SessionGroup> sessions;
 
     public TimeSlot() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
     
 
